@@ -1,0 +1,31 @@
+<template name="footer">
+	<hr>
+  <footer>
+    <div class="container footer">
+    	<div class="col-xs-12 col-md-2">
+			<div>
+            	<h5><strong>Síguenos: </strong></h5>
+                <a href="https://www.facebook.com/healthcoachraquelsanmillan" target="_blank"><img class="footersocial" src="https://www.mars-hill.co.uk/public/social/round/facebook.png" alt="facebook"></a>
+                <a href="https://instagram.com/healthcoachraquel/" target="_blank"><img class="footersocial" src="https://afrotonez.com/wp-content/uploads/2017/01/instagram.png" alt="instagram"></a>
+            </div>       
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <div>
+                <h5><strong>Contacta con nosotros: </strong></h5>
+                <p><img class="footeraddress" src="http://mihealthcoach.com.mx/images/posicion.png">  Lope de Vega 131, Polanco, CDMX</p>
+                <p><img class="footeraddress" src="http://mihealthcoach.com.mx/images/telefono.png">  5203.2313 / 5203.2496 / 5545.0955</p>
+                <p><img class="footeraddress" src="http://mihealthcoach.com.mx/images/mail.png">  raquel@mihealthcoach.com.mx</p>
+            </div>       
+        </div>
+ 		<div class="col-xs-12 col-md-6 googlemaps" id="googlemaps">
+            <div class="map-container">
+                {{> googleMap name="exampleMap" options=exampleMapOptions}}
+            </div>
+ 		</div>
+
+        <div class="col-xs-12 col-md-12">
+            <p>&copy; 2018. Todos los derechos reservados.</p>
+        </div>
+    </div>
+  </footer>
+</template>
