@@ -1,5 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+//import SimpleSchema from 'simpl-schema';
+//SimpleSchema.extendOptions(['autoform']);
 
 import './main.html';
 

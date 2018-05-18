@@ -69,8 +69,6 @@
 	padding-bottom: 15px;
 }
 
-
-
 .plan h5{
 	text-align: center;
 	font-weight: bold;
@@ -100,6 +98,11 @@
 }
 .modal-footer p{
 	text-align: center;
+}
+
+.about img{
+	width: 100%;
+	border: 2px solid MediumSeaGreen;
 }
 
 /*
