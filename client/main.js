@@ -1,24 +1,39 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-//import SimpleSchema from 'simpl-schema';
-//SimpleSchema.extendOptions(['autoform']);
 
 import './main.html';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
+import SimpleSchema from 'simpl-schema';
+import { Tracker } from 'meteor/tracker';
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+// Required AutoForm setup
+SimpleSchema.extendOptions(['autoform']);
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+Contact = new Mongo.Collection("contact");
+Contact.attachSchema(new SimpleSchema({
+  title: {
+    type: String,
+    label: "Title",
+    max: 200
   },
-});
+  author: {
+    type: String,
+    label: "Author"
+  },
+  copies: {
+    type: Number,
+    label: "Number of copies",
+    min: 0
+  },
+  lastCheckedOut: {
+    type: Date,
+    label: "Last date this book was checked out",
+    optional: true
+  },
+  summary: {
+    type: String,
+    label: "Brief summary",
+    optional: true,
+    max: 1000
+  }
+}, { tracker: Tracker }));

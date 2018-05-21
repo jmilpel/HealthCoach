@@ -100,8 +100,13 @@
 	text-align: center;
 }
 
-.about img{
-	width: 100%;
+.about{
+	align-content: center;
+}
+
+#aboutimg{
+	height: 220px;
+	width: auto;
 	border: 2px solid MediumSeaGreen;
 }
 

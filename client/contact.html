@@ -3,12 +3,14 @@
 			<h1>Contacta con nosotros</h1>
 			<h4>Completando tus datos de contacto, obtendrás una valoración nutricional al 50% dto</h4>
 			<hr class="init">
-			<div class="col-xs-12 col-md-5">
-				<!--{{> quickForm id="fields1" schema=Schemas.FieldsExamples}}-->
-			</div>
 			<div class="col-xs-12 col-md-7">
-				
+				{{> insertContact}}
 			</div>
 		</div>
 		<hr class="final">
+</template>
+
+
+<template name="insertBookForm">
+	{{> quickForm collection="Contact" id="insertContact" type="insert"}}
 </template>
