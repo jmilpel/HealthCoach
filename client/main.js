@@ -1,39 +1,40 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Router } from 'meteor/iron:router'
+import { GoogleMaps } from 'meteor/dburles:google-maps';
 
 import './main.html';
 
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
+
 // Required AutoForm setup
 SimpleSchema.extendOptions(['autoform']);
 
-Contact = new Mongo.Collection("contact");
-Contact.attachSchema(new SimpleSchema({
-  title: {
-    type: String,
-    label: "Title",
-    max: 200
-  },
-  author: {
-    type: String,
-    label: "Author"
-  },
-  copies: {
-    type: Number,
-    label: "Number of copies",
-    min: 0
-  },
-  lastCheckedOut: {
-    type: Date,
-    label: "Last date this book was checked out",
-    optional: true
-  },
-  summary: {
-    type: String,
-    label: "Brief summary",
-    optional: true,
-    max: 1000
-  }
-}, { tracker: Tracker }));
+GoogleMaps.load();
+
+
+Template.Contact.helpers({
+    exampleMapOptions: function() {
+      // Make sure the maps API has loaded
+      if (GoogleMaps.loaded()) {
+        // Map initialization options
+        return {
+          center: new google.maps.LatLng(-37.8136, 144.9631),
+          zoom: 8
+        };
+      }
+    }
+  });
+
+  Template.Contact.onCreated(function() {
+    // We can use the `ready` callback to interact with the map API once the map is ready.
+    GoogleMaps.ready('exampleMap', function(map) {
+      // Add a marker to the map once it's ready
+      var marker = new google.maps.Marker({
+        position: map.options.center,
+        map: map.instance
+      });
+    });
+  });

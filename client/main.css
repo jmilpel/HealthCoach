@@ -8,6 +8,18 @@
 	vertical-align: center;
 }
 
+body{
+	background: #ecffe6;
+}
+
+.carousel-caption h3{
+	font-size: 25px;
+}
+
+.carousel-caption p{
+	font-size: 17px;
+}
+
 .navbar-brand img {
     height: 60px;
     width: auto;
@@ -20,7 +32,6 @@
 
 
 /*Estilos aplicados en toda la web*/
-
 /*Lineas divisorias de secciones*/
 .init{
 	border: 2px solid #c9e8d1;
@@ -31,36 +42,58 @@
 }
 
 .final{
+/*	border: 2px solid #d1e0e0;
+	border-radius: 0px/10px; 
+	height: 0px;
 	width: 90%;
-	height: 2px;
+	text-align: center;
+	padding-bottom: 20px;*/
+	display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
 }
 
-.seccion h1{
+.section{
+	margin: 15px 0px 0px;
+}
+
+.section h1{
+	margin-top: 10px;
 	text-align: center;
 }
 
-.seccion h4{
+.section h4{
 	text-align: center;
 }
+
 
 .portada{
-	background: #c9e8d1;
+	/*background: #c9e8d1;*/
 	background-repeat: no-repeat;
     background-position: center;
     align-content: center;
+    text-align: center;
 }
 
 /*Estilos aplicados en la seccion PROGRAMAS*/
 
 .service{
+	padding: 8px;
 	align-items: center;
-	border: 2px solid black;
+	text-align: center;
+	border: 2px solid MediumSeaGreen;
+	border-radius: 20px/80px;
+	background: #fff;
 }
 
 .service img{
-	height: 200px;
-	width: 200px;
-	border: 2px solid MediumSeaGreen;
+	height: 150px;
+	width: 150px;
+	/*border: 1px solid MediumSeaGreen;*/
 }
 
 .service h3{
@@ -82,13 +115,14 @@
 
 .plan img{
 	width: 100%;
-	border: 2px solid MediumSeaGreen;
+	/*border: 2px solid MediumSeaGreen;*/
 }
 
 /*.modal-header .modal-footer{
 	background: linear-gradient(to bottom right, #00cc99 0%, #ccffcc 100%);
 }
 */
+
 .modal-header{
 	background: #97cc8a;
 }
@@ -101,13 +135,22 @@
 }
 
 .about{
-	align-content: center;
+	align-items: center;
+	text-align: center;
+	/*border: 2px solid MediumSeaGreen;*/
+	/*background: MediumSeaGreen;*/
+	padding: 5px 2px 10px 2px;
 }
 
 #aboutimg{
-	height: 220px;
+	height: 230px;
 	width: auto;
-	border: 2px solid MediumSeaGreen;
+	border: 0px solid MediumSeaGreen;
+}
+
+.iconsocial{
+	height: 30px;
+	width: 30px;
 }
 
 /*
@@ -126,18 +169,24 @@
 */
 
 /*Div para inrustar el mapa de Google Maps*/
-
 .map-container {
   width: 100%;
   max-width: 100%;
   height: 250px;
   border: solid 2px black;
-  padding-top: 5px;
+  /*padding-top: 5px;*/
 }
+
+/*
+#map{
+	width: 100%;
+	height: 250px;
+	border: solid 2px black;
+	padding-top: 5px;
+}*/
 
 
 /*Caracteristicas aplicadas al footer*/
-
 .footer{
 	background-color: #c9e8d1;
 	width: 96%;
@@ -148,8 +197,8 @@
 }
 
 .footersocial{
-	height: 30px;
-	width: 30px;
+	height: 20px;
+	width: 20px;
 }
 
 .footeraddress{

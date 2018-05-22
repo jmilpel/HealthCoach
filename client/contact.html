@@ -1,13 +1,20 @@
 <template name="Contact">
-		<div id="contact" class="seccion">
+		<div id="contactForm" class="section col-xs-12">
 			<h1>Contacta con nosotros</h1>
 			<h4>Completando tus datos de contacto, obtendrás una valoración nutricional al 50% dto</h4>
 			<hr class="init">
-			<div class="col-xs-12 col-md-7">
-				{{> insertContact}}
+			<div class="col-xs-12">
+				<!--{{> insertContact}}-->
 			</div>
 		</div>
-		<hr class="final">
+		<br>
+		<div class="map-container col-xs-12">
+			<!--{{> googleMap name="exampleMap" options=exampleMapOptions}}-->
+			{{> googleMap name="exampleMap" options=exampleMapOptions}}
+		</div>
+
+		<br><br>
+		<!--<hr class="final">-->
 </template>
 
 

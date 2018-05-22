@@ -33,3 +33,7 @@ spacebars
 check
 dburles:google-maps
 aldeed:autoform
+kadira:flow-router
+kadira:blaze-layout
+meteorhacks:fast-render
+mdg:geolocation
