@@ -4,5 +4,5 @@ import { Tracker } from 'meteor/tracker';
 
 Meteor.startup(() => {
   // code to run on server at startup
-	GoogleMaps.load();
+	//GoogleMaps.load();
 });
