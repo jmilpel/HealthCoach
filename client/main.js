@@ -4,7 +4,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Router } from 'meteor/iron:router'
 import { GoogleMaps } from 'meteor/dburles:google-maps';
 
-import './main.html';
+//import './main.html';
 
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
@@ -22,8 +22,8 @@ Template.Contact.helpers({
       if (GoogleMaps.loaded()) {
         // Map initialization options
         return {
-          center: new google.maps.LatLng(-37.8136, 144.9631),
-          zoom: 8
+          center: new google.maps.LatLng(19.436768, -99.187202),
+          zoom: 16
         };
       }
     }
