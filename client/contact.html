@@ -1,27 +1,30 @@
 <template name="Contact">
-		<div id="contactForm" class="section col-xs-12">
+		<div id="contactHeader" class="section col-xs-12">
 			<h1>Contacta con nosotros</h1>
 			<h4>Completando tus datos de contacto, obtendrás una valoración nutricional al 50% dto</h4>
 			<hr class="init">
 		</div>
 		<div class="col-xs-12">
-			{{#autoForm schema=contactFormSchema id="contactForm" type="method" meteormethod="sendEmail"}}
-				<fieldset>
-			    <!--<legend>Contact Us</legend>-->
-			    {{> afQuickField name="name"}}
-			    {{> afQuickField name="email"}}
-			    {{> afQuickField name="telephone"}}
-			    {{> afQuickField name="city"}}
-			    {{> afQuickField name="message" rows=10}}
-				<div>
-					<button type="submit" class="btn btn-primary">Enviar mensaje</button>
-				</div>
-			 	</fieldset>
-			{{/autoForm}}
+			{{> contactForm}}
 		</div>
 		<div class="map-container col-xs-12">
 			{{> googleMap name="healthMap" options=healthMapOptions}}
 		</div>
 		<br><br>
 		<!--<hr class="final">-->
+</template>
+
+<template name="contactForm">
+	{{#autoForm schema=contactFormSchema id="contactForm" type="method" meteormethod="sendEmail"}}
+		<fieldset>
+			{{> afQuickField name="name"}}
+			{{> afQuickField name="email" type="email"}}
+			{{> afQuickField name="telephone" type="number"}}
+			{{> afQuickField name="city"}}
+			{{> afQuickField name="message" rows=10}}
+			<div>
+				<button type="submit" class="btn btn-primary">Enviar mensaje</button>
+			</div>
+		</fieldset>
+	{{/autoForm}}
 </template>

@@ -13,7 +13,6 @@ import { Tracker } from 'meteor/tracker';
 
 GoogleMaps.load();
 
-
 Template.Contact.helpers({
     healthMapOptions: function() {
       // Make sure the maps API has loaded
@@ -39,27 +38,8 @@ Template.Contact.onCreated(function() {
   });
 
 
-Schema = {};
-Schema.contactFormSchema = new SimpleSchema({
-    name: {
-        type: String,
-        label: "Your name",
-        max: 50
-    },
-    email: {
-        type: String,
-        regEx: SimpleSchema.RegEx.Email,
-        label: "E-mail address"
-    },
-    message: {
-        type: String,
-        label: "Message",
-        max: 1000
-    }
-}, { tracker: Tracker });
-
 Template.contactForm.helpers({
-  contactFormSchema: function() {
+  contactForm: function() {
     return Schema.contactFormSchema;
   }
 });
