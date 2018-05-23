@@ -1,7 +1,23 @@
 <template name="blog">
   <div class="container">
-    {{> blogIndex}}
+    <!--{{> blogIndex}}-->
+
+    <ul>
+    {{#if blogReady}}
+      {{#each posts}}
+        <li>
+          <h2>{{title}}</h2>
+          <p>Published on {{publishedAt}}</p>
+          <p>Excerpt: {{excerpt}}</p>
+        </li>
+      {{else}}
+        <li>No se han encontrado publicaciones.</li>
+      {{/each}}
+    {{else}}
+      <li>Loading...</li>
+    {{/if}}
+  </ul>
 
     <!--<p>{{> blogLatest num=5}}</p>-->
   </div>
-</template>
+</template> 
