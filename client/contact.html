@@ -3,15 +3,23 @@
 			<h1>Contacta con nosotros</h1>
 			<h4>Completando tus datos de contacto, obtendrás una valoración nutricional al 50% dto</h4>
 			<hr class="init">
-			<div class="col-xs-12">
-				<!--{{> insertContact}}-->
-			</div>
 		</div>
-		<br>
+		<div class="col-xs-12">
+			{{#autoForm collection="Books" id="insertBookForm" type="insert"}}
+    		<fieldset>
+      		<!--<legend>Add a Book</legend>-->
+		      {{> afQuickField name='name'}}
+		      {{> afQuickField name='email'}}
+		      {{> afQuickField name='telephone'}}
+		      {{> afQuickField name='city'}}
+		      {{> afQuickField name='query' rows=6}}
+		    </fieldset>
+		    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+			{{/autoForm}}
+		</div>
 		<div class="map-container col-xs-12">
 			{{> googleMap name="exampleMap" options=exampleMapOptions}}
 		</div>
-
 		<br><br>
 		<!--<hr class="final">-->
 </template>

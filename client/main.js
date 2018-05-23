@@ -6,12 +6,10 @@ import { GoogleMaps } from 'meteor/dburles:google-maps';
 
 //import './main.html';
 
-import SimpleSchema from 'simpl-schema';
-import { Tracker } from 'meteor/tracker';
-
-
 // Required AutoForm setup
+import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
+import { Tracker } from 'meteor/tracker';
 
 GoogleMaps.load();
 
@@ -29,7 +27,7 @@ Template.Contact.helpers({
     }
   });
 
-  Template.Contact.onCreated(function() {
+Template.Contact.onCreated(function() {
     // We can use the `ready` callback to interact with the map API once the map is ready.
     GoogleMaps.ready('exampleMap', function(map) {
       // Add a marker to the map once it's ready
@@ -39,3 +37,32 @@ Template.Contact.helpers({
       });
     });
   });
+
+
+Books = new Mongo.Collection("books");
+Books.attachSchema(new SimpleSchema({
+  name: {
+    type: String,
+    label: "Nombre y apellidos",
+    max: 200
+  },
+  email: {
+    type: String,
+    label: "Email"
+  },
+  telephone: {
+    type: Number,
+    label: "Teléfono",
+    min: 0
+  },
+  city: {
+    type: String,
+    label: "Población",
+    optional: true
+  },
+  query: {
+    type: String,
+    label: "Dudas y consultas",
+    max: 1000
+  }
+}, { tracker: Tracker }));

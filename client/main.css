@@ -170,10 +170,11 @@ body{
 
 /*Div para inrustar el mapa de Google Maps*/
 .map-container {
-  width: 100%;
+  /*width: 100%;*/
   max-width: 100%;
   height: 250px;
   border: solid 2px black;
+  margin-top: 20px;
   /*padding-top: 5px;*/
 }
 
