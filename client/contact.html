@@ -5,20 +5,22 @@
 			<hr class="init">
 		</div>
 		<div class="col-xs-12">
-			{{#autoForm collection="Books" id="insertBookForm" type="insert"}}
-    		<fieldset>
-      		<!--<legend>Add a Book</legend>-->
-		      {{> afQuickField name='name'}}
-		      {{> afQuickField name='email'}}
-		      {{> afQuickField name='telephone'}}
-		      {{> afQuickField name='city'}}
-		      {{> afQuickField name='query' rows=6}}
-		    </fieldset>
-		    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+			{{#autoForm schema=contactFormSchema id="contactForm" type="method" meteormethod="sendEmail"}}
+				<fieldset>
+			    <!--<legend>Contact Us</legend>-->
+			    {{> afQuickField name="name"}}
+			    {{> afQuickField name="email"}}
+			    {{> afQuickField name="telephone"}}
+			    {{> afQuickField name="city"}}
+			    {{> afQuickField name="message" rows=10}}
+				<div>
+					<button type="submit" class="btn btn-primary">Enviar mensaje</button>
+				</div>
+			 	</fieldset>
 			{{/autoForm}}
 		</div>
 		<div class="map-container col-xs-12">
-			{{> googleMap name="exampleMap" options=exampleMapOptions}}
+			{{> googleMap name="healthMap" options=healthMapOptions}}
 		</div>
 		<br><br>
 		<!--<hr class="final">-->
