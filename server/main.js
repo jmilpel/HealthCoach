@@ -1,8 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { GoogleMaps } from 'meteor/dburles:google-maps';
-import { Tracker } from 'meteor/tracker';
 import SimpleSchema from 'simpl-schema';
+//import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 SimpleSchema.extendOptions(['autoform']);
+import { Tracker } from 'meteor/tracker';
 
 Meteor.startup(() => {
   // code to run on server at startup
@@ -13,7 +14,7 @@ Meteor.startup(() => {
 Meteor.methods({
   sendEmail: function(doc) {
     // Important server-side check for security and data integrity
-    check(doc, Schema.contactFormSchema);
+    check(doc, Schema.contactForm);
 
     // Build the e-mail text
     var text = "Nombre: " + doc.name + "\n\n"

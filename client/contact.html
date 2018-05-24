@@ -15,7 +15,8 @@
 </template>
 
 <template name="contactForm">
-	{{#autoForm schema=contactFormSchema id="contactForm" type="method" meteormethod="sendEmail"}}
+	<div class="container">
+	{{#autoForm schema=contactForm id="contactForm" type="method" meteormethod="sendEmail"}}
 		<fieldset>
 			{{> afQuickField name="name"}}
 			{{> afQuickField name="email" type="email"}}
@@ -27,4 +28,11 @@
 			</div>
 		</fieldset>
 	{{/autoForm}}
+	</div>
+</template>
+
+<template name="contactForm1">
+	<div class="container">
+	{{> quickForm id="contactForm" type="method" schema=contactForm doc=exampleDoc scope="contacts"}}
+	</div>
 </template>
